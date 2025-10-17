@@ -2,6 +2,8 @@
 
 ---
 
+## Проверки на знанията
+-  [Lists & Tuples](https://docs.google.com/forms/d/e/1FAIpQLSeFP4HFzCzh6NVxOQIHqVcqrwn2yD6iuTmNDHCRf6De4dqXJQ/viewform?usp=dialog)
 ### 02. Lists & Tuples (Списъци и кортежи)
 1. Списък (list)
     - Наредена и променяема (mutable) колекция от елементи.
