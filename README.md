@@ -1,0 +1,1 @@
+# Strypes-2025-FI-and-Automation-FI
