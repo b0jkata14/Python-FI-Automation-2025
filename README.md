@@ -2,7 +2,7 @@
 
 ---
 
-## Проверки на знанията
+### Knowledge Checks
 
 -  [Lists & Tuples](https://docs.google.com/forms/d/e/1FAIpQLSeFP4HFzCzh6NVxOQIHqVcqrwn2yD6iuTmNDHCRf6De4dqXJQ/viewform?usp=dialog)
 
