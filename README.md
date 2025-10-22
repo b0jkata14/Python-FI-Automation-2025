@@ -99,18 +99,18 @@
     - Предимства: по-ясна структура и по-лесна поддръжка.
     - Създаване:
       ```py
-        def hello(name):
-            return f"Hello, f{name}!"
+    def hello(name):
+        return f"Hello, f{name}!"
       ```
 2. Рекурсия
     - Функция, която извиква сама себе си.
     - Изисква задължителен базов случай (край на рекурсията).
     - Пример:
       ```py
-        def factorial(n):
-            if n == 1:
-                return 1
-            return n * factorial(n - 1)
+    def factorial(n):
+        if n == 1:
+            return 1
+        return n * factorial(n - 1)
       ```
 
 
