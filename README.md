@@ -237,7 +237,7 @@
               print("This is a class method.")
 
           @staticmethod
-          def add(a, b):        # статичен метод
+          def add(a, b):  # статичен метод
               return a + b
       ```
 
