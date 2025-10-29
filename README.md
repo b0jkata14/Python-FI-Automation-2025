@@ -252,13 +252,13 @@
       print(5 / 0)  # ZeroDivisionError
       ```
     - Изключения ≠ syntax errors.
-      - SyntaxError → грешка при компилация
-      - Exception → грешка при изпълнение (runtime)
+      - SyntaxError → грешка при компилация.
+      - Exception → грешка при изпълнение (runtime).
 
 2. try / except / else и finally - прихващане на изключения
     - Можеш да имаш няколко `except` блока.
     - `else` → за „нормалната“ логика след успешен `try`.
-    - `finally` → за освобождаване на ресурси (файлове, връзки, мрежа и др.)
+    - `finally` → за освобождаване на ресурси (файлове, връзки, мрежа и др.).
       ```py
       try:
           result = 10 / 2
@@ -279,7 +279,7 @@
       ```
 
 4. Собствени изключения 
-    - По-ясен контрол върху конкретен тип грешка
+    - По-ясен контрол върху конкретен тип грешка.
       ```py
       class InvalidScore(Exception):
           """Custom exception for invalid exam scores."""
