@@ -243,3 +243,58 @@
 
 ---
 
+### 08. Exception Handling (Обработка на изключения)
+1. Какво е изключение?
+    - Обект, който Python създава автоматично при грешка по време на изпълнение.
+    - Спира програмата, освен ако не бъде прихванато.
+      ```py
+      x = int("abc")  # ValueError
+      print(5 / 0)  # ZeroDivisionError
+      ```
+    - Изключения ≠ syntax errors.
+      - SyntaxError → грешка при компилация
+      - Exception → грешка при изпълнение (runtime)
+
+2. try / except / else и finally - прихващане на изключения
+    - Можеш да имаш няколко `except` блока.
+    - `else` → за „нормалната“ логика след успешен `try`.
+    - `finally` → за освобождаване на ресурси (файлове, връзки, мрежа и др.)
+      ```py
+      try:
+          result = 10 / 2
+      except ZeroDivisionError:
+          print("Division by zero.")
+      else:
+          print("Everything worked!")  # само ако няма грешка
+      finally:
+          print("This runs no matter what.")  # винаги
+      ```
+
+3. Предизвикване на изключения
+    - `raise` - ръчно „хвърляне“ на изключение.
+      ```py
+      age = -5
+      if age < 0:
+          raise ValueError("Age cannot be negative.")
+      ```
+
+4. Собствени изключения 
+    - По-ясен контрол върху конкретен тип грешка
+      ```py
+      class InvalidScore(Exception):
+          """Custom exception for invalid exam scores."""
+          pass
+
+      def set_score(score):
+          if not 0 <= score <= 100:
+              raise InvalidScore("Score must be between 0 and 100.")
+          print("Score accepted!")
+
+      try:
+          set_score(120)
+      except InvalidScore as e:
+          print("Custom exception:", e)  # Custom exception: Score must be between 0 and 100.
+      ```
+
+---
+
