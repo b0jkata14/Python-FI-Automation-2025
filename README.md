@@ -299,3 +299,28 @@
 
 ---
 
+### 10. WEB Basics — Interacting with REST APIs
+1. Какво е REST API?
+    - REST (Representational State Transfer) — архитектурен стил, използващ HTTP методи.
+    - API (Application Programming Interface) — начин различни системи да обменят данни.
+    - Всеки ресурс (напр. потребител, пост, файл) има уникален URL.
+    - Методи:
+      - `GET` - извличане на данни - `/users`
+      - `POST` - създаване на нов ресурс - `/users`
+      - `PUT` - пълна промяна - `/users/1`
+      - `PATCH` - частична промяна - `/users/1`
+      - `DELETE` - изтриване - `/users/1`
+
+2. Първи стъпки с requests
+    - Инсталация:
+      ```bash
+      pip install requests
+      ```
+    - Пример:
+      ```py
+      import requests
+
+      r = requests.get("https://jsonplaceholder.typicode.com/todos/1")
+      print(r.status_code)  # 200
+      print(r.json())  # Отговор в JSON формат
+      ```
