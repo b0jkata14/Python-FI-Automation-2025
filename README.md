@@ -8,6 +8,7 @@
 -  [Functions](https://docs.google.com/forms/d/e/1FAIpQLSfPUvxxX7r0aEecrbSTY-5oz8NWBNvge9bmc3qryMvk30Ko8A/viewform?usp=header)
 - [Object-Oriented Programming (OOP)](https://docs.google.com/forms/d/e/1FAIpQLSec-IleEHAoL73XVvfioZjwQbLsida70a2SwWBQD5F4rQZ5Fg/viewform?usp=dialog)
 - [Exception Handling](https://docs.google.com/forms/d/e/1FAIpQLSch16Rfzuy7_0Ew6xYn5QT-xpFHzChBCeI5ti_KQWe51DFMPQ/viewform?usp=dialog)
+- [WEB Basics — Interacting with REST APIs](https://docs.google.com/forms/d/e/1FAIpQLSfmScyxjbLGD6bj7TGQQu2ir2mx9n5OC2zSJKLjbxKFiGAnhw/viewform?usp=dialog)
 ---
 
 ### 02. Lists & Tuples (Списъци и кортежи)
