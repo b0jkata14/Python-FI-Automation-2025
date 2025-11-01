@@ -324,3 +324,38 @@
       print(r.status_code)  # 200
       print(r.json())  # Отговор в JSON формат
       ```
+
+3. Query параметри
+      ```py
+      r = requests.get("https://httpbin.org/get", params={"q": "mnknowledge", "page": 2})
+      print(r.url)  # автоматично добавя ?q=mnknowledge&page=2
+
+      r = requests.get("https://httpbin.org/headers",
+                    headers={"X-Course": "API101"})
+      print(r.json())
+      ```
+    - `params` вместо ръчно добавяне на `?`.
+    - `headers` за изпращане на токени, тип съдържание и др.
+
+4. Статус кодове
+    - `200` - успешна заявка
+    - `201` - успешно създаден ресурс
+    - `401` - неоторизиран достъп
+    - `404` - не е намерено
+    - `500` - грешка в сървъра
+
+5. Проверка и обработка на грешки
+      ```py
+      r = requests.get("https://httpbin.org/status/404", timeout=5)
+      print(r.status_code, r.ok)  # 404 False
+
+      try:
+          r.raise_for_status()
+      except requests.HTTPError as e:
+          print("HTTP error:", e)
+      ```
+    - `timeout` - за да не "виси" програмата.
+    - `raise_for_status()` — за автоматично откриване на 4xx/5xx грешки.
+
+---
+
