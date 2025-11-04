@@ -8,7 +8,7 @@
 -  [Functions](https://docs.google.com/forms/d/e/1FAIpQLSfPUvxxX7r0aEecrbSTY-5oz8NWBNvge9bmc3qryMvk30Ko8A/viewform?usp=header)
 - [Object-Oriented Programming (OOP)](https://docs.google.com/forms/d/e/1FAIpQLSec-IleEHAoL73XVvfioZjwQbLsida70a2SwWBQD5F4rQZ5Fg/viewform?usp=dialog)
 - [Exception Handling](https://docs.google.com/forms/d/e/1FAIpQLSch16Rfzuy7_0Ew6xYn5QT-xpFHzChBCeI5ti_KQWe51DFMPQ/viewform?usp=dialog)
-- [WEB Basics — Interacting with REST APIs](https://docs.google.com/forms/d/e/1FAIpQLSfmScyxjbLGD6bj7TGQQu2ir2mx9n5OC2zSJKLjbxKFiGAnhw/viewform?usp=dialog)
+- [WEB Basics — Interacting with REST APIs (1)](https://docs.google.com/forms/d/e/1FAIpQLSfmScyxjbLGD6bj7TGQQu2ir2mx9n5OC2zSJKLjbxKFiGAnhw/viewform?usp=dialog)
 ---
 
 ### 02. Lists & Tuples (Списъци и кортежи)
@@ -300,7 +300,7 @@
 
 ---
 
-### 10. WEB Basics — Interacting with REST APIs
+### 10. WEB Basics — Interacting with REST APIs (1)
 1. Какво е REST API?
     - REST (Representational State Transfer) — архитектурен стил, използващ HTTP методи.
     - API (Application Programming Interface) — начин различни системи да обменят данни.
@@ -360,3 +360,75 @@
 
 ---
 
+### 11. WEB Basics — Interacting with REST APIs (2)
+1. POST – създаване на ресурс
+    - Използва се за добавяне на нов обект.
+    - Изпраща данни в body на заявката.
+    - Най-често връща `201 Created`.
+        ```py
+        import requests
+
+        url = "https://jsonplaceholder.typicode.com/posts"
+        data = {
+            "title": "Hello API",
+            "body": "This is my first POST request",
+            "userId": 1
+        }
+
+        r = requests.post(url, json=data)
+        print(r.status_code)  # 201
+        print(r.json())  # Върнатият нов ресурс
+        ```
+
+2. PUT и PATCH – промяна на ресурс
+    - `PUT` - заменя целия обект.
+    - `PATCH` - променя само конкретни полета.
+    - И двата метода често връщат `200 OK`.
+        ```py
+        # PUT – пълна замяна
+        r = requests.put("https://jsonplaceholder.typicode.com/posts/1",
+                        json={"id": 1, "title": "Updated", "body": "Full replace", "userId": 1})
+
+        # PATCH – частична промяна
+        r = requests.patch("https://jsonplaceholder.typicode.com/posts/1",
+                        json={"title": "Partial update"})
+        ```
+3. DELETE – изтриване на ресурс
+    - Използва се за изтриване на съществуващ ресурс.
+    - Връща `200 OK` или `204 No Content`.
+        ```py
+        r = requests.delete("https://jsonplaceholder.typicode.com/posts/1")
+        print(r.status_code)  # 200 или 204        
+        ```
+
+4. Сесии (requests.Session)
+    - `Session()` - пази състояние между заявките.
+    - Позволява споделени headers, cookies и връзки между заявки.
+    - По-бързо и по-ефективно при множество заявки.
+    - Използвай `with` за автоматично затваряне.
+        ```py
+        with requests.Session() as s:
+            s.headers.update({"X-App": "Demo"})
+            s.get("https://httpbin.org/cookies/set?theme=dark")
+            res = s.get("https://httpbin.org/cookies")
+            print(res.json())  # {'cookies': {'theme': 'dark'}}
+        ```
+
+5. Автентикация (Authentication)
+    - `Authorization header` се използва за всички типове токени.
+    - Никога не записвай токени в кода — използвай `.env` или променливи на средата.
+    - Винаги използвай HTTPS при реална автентикация.
+    - Basic Authentication (пример):
+        ```py
+        from requests.auth import HTTPBasicAuth
+
+        r = requests.get("https://httpbin.org/basic-auth/user/pass",
+                        auth=HTTPBasicAuth("user", "pass"))
+        print(r.status_code)  # 200
+        ```
+    - Bearer Token Authentication (пример):
+        ```py
+        headers = {"Authorization": "Bearer testtoken123"}
+        r = requests.get("https://httpbin.org/bearer", headers=headers)
+        print(r.json())
+        ```  
