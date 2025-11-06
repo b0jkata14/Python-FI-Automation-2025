@@ -10,6 +10,8 @@
 - [Exception Handling](https://docs.google.com/forms/d/e/1FAIpQLSch16Rfzuy7_0Ew6xYn5QT-xpFHzChBCeI5ti_KQWe51DFMPQ/viewform?usp=dialog)
 - [WEB Basics — Interacting with REST APIs (1)](https://docs.google.com/forms/d/e/1FAIpQLSfmScyxjbLGD6bj7TGQQu2ir2mx9n5OC2zSJKLjbxKFiGAnhw/viewform?usp=dialog)
 - [WEB Basics — Interacting with REST APIs (2)](https://docs.google.com/forms/d/e/1FAIpQLSfZnC3nR0EIeUgWzxt5RM3CKMgmUg9lPrMgRnuSGubvUSPaBA/viewform?usp=dialog)
+- [Testing](https://docs.google.com/forms/d/e/1FAIpQLSfa-ysg8Wcb1wbU2hDxcZAPTPPG_-AU-rO8eW7-yCX-Eouivg/viewform?usp=publish-editor)
+  
 ---
 
 ### 02. Lists & Tuples (Списъци и кортежи)
@@ -433,3 +435,65 @@
         r = requests.get("https://httpbin.org/bearer", headers=headers)
         print(r.json())
         ```  
+
+---
+
+### 12. Testing (Тестване)
+1. Автоматизирани тестове
+    - Програми, които автоматично проверяват дали друг код работи правилно.
+    - Спестяват време, предотвратяват повторни грешки, осигуряват стабилност.
+    - Основни библиотеки в Python: unittest (вградена) или pytest.
+    - Пример с `unittest`:
+        ```py
+        import unittest
+
+        def add(a, b):
+            return a + b
+
+        class TestMath(unittest.TestCase):
+            def test_add(self):  # Ако тестът се провали, Python спира с „FAILED“.
+                self.assertEqual(add(2, 3), 5)  # assertEqual - проверява очаквания резултат
+                self.assertNotEqual(add(2, 2), 5)
+
+        if __name__ == "__main__":
+            unittest.main()
+        ```
+
+2. Test philosophy & Test types
+    - Тестването не доказва, че няма грешки — доказва, че кодът работи както очакваме.
+    - Test Types:
+      - Unit test - проверява отделна функция/метод - `assertEqual(add(2,3), 5)`
+      - Integration test - проверява дали модулите работят заедно - (напр. API + база данни)
+      - System test - проверява цялата система - (напр. Web UI + backend)
+      - Acceptance test - проверява дали отговаря на изискванията на клиента - (напр. тест на бизнес сценарий)
+
+3. TDD (Test-Driven Development)
+    - (Стъпка 1) Напиши тест, който първоначално се проваля.
+    - (Стъпка 2) Напиши минимален код, за да мине тестът.
+    - (Стъпка 3) Подобри кода, запазвайки успешните тестове.
+        ```py
+        # 1. Първо пишем тест
+        class TestEven(unittest.TestCase):
+            def test_is_even(self):
+                self.assertTrue(is_even(4))
+                self.assertFalse(is_even(5))
+
+        # 2. Тогава пишем функцията
+        def is_even(x):
+            return x % 2 == 0
+        ```
+
+4. Coverage (Покритие на кода)
+    - Процент от кода, който е бил изпълнен от тестовете.
+    - Измерва се с инструменти като coverage.py или pytest --cov.
+    - Ако тестовете покриват 80% от кода → добър резултат, под 50% - вероятно има не тествани случаи.
+        ```bash
+        pip install coverage
+        coverage run -m unittest
+        coverage report
+        ```
+
+5. Breakpoints & Debugger
+    - Целта е да спреш изпълнението на програмата и да видиш какво се случва „вътре“.
+
+---
