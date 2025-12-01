@@ -1,4 +1,4 @@
-# Strypes Python FI Automation 2025
+# Python FI Automation 2025
 
 ---
 
