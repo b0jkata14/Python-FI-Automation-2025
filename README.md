@@ -6,8 +6,8 @@
 
 -  [Lists & Tuples](https://docs.google.com/forms/d/e/1FAIpQLSeFP4HFzCzh6NVxOQIHqVcqrwn2yD6iuTmNDHCRf6De4dqXJQ/viewform?usp=dialog)
 - [Functions](https://docs.google.com/forms/d/e/1FAIpQLSfPUvxxX7r0aEecrbSTY-5oz8NWBNvge9bmc3qryMvk30Ko8A/viewform?usp=header)
-<!---  - [Object-Oriented Programming (OOP)](https://docs.google.com/forms/d/e/1FAIpQLSec-IleEHAoL73XVvfioZjwQbLsida70a2SwWBQD5F4rQZ5Fg/viewform?usp=dialog)
-- [Exception Handling](https://docs.google.com/forms/d/e/1FAIpQLSch16Rfzuy7_0Ew6xYn5QT-xpFHzChBCeI5ti_KQWe51DFMPQ/viewform?usp=dialog)
+- [Object-Oriented Programming (OOP)](https://docs.google.com/forms/d/e/1FAIpQLSec-IleEHAoL73XVvfioZjwQbLsida70a2SwWBQD5F4rQZ5Fg/viewform?usp=dialog)
+<!---- [Exception Handling](https://docs.google.com/forms/d/e/1FAIpQLSch16Rfzuy7_0Ew6xYn5QT-xpFHzChBCeI5ti_KQWe51DFMPQ/viewform?usp=dialog)
 - [WEB Basics — Interacting with REST APIs (1)](https://docs.google.com/forms/d/e/1FAIpQLSfmScyxjbLGD6bj7TGQQu2ir2mx9n5OC2zSJKLjbxKFiGAnhw/viewform?usp=dialog)
 - [WEB Basics — Interacting with REST APIs (2)](https://docs.google.com/forms/d/e/1FAIpQLSfZnC3nR0EIeUgWzxt5RM3CKMgmUg9lPrMgRnuSGubvUSPaBA/viewform?usp=dialog)
 - [Testing](https://docs.google.com/forms/d/e/1FAIpQLSfa-ysg8Wcb1wbU2hDxcZAPTPPG_-AU-rO8eW7-yCX-Eouivg/viewform?usp=publish-editor)
@@ -174,7 +174,7 @@
       doubled = list(map(lambda n: n * 2, numbers))  # [2, 4, 6, 8, 10]
       ```
 ---
-<!---
+
 ### 06. Object-Oriented Programming (Обектно-ориентирано програмиране)
 1. Какво е ООП?
     - Начин на програмиране, при който кодът се организира около обекти, а не около функции.
@@ -247,7 +247,7 @@
       ```
 
 ---
-
+<!---
 ### 08. Exception Handling (Обработка на изключения)
 1. Какво е изключение?
     - Обект, който Python създава автоматично при грешка по време на изпълнение.
