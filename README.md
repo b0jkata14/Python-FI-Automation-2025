@@ -245,6 +245,34 @@
           def add(a, b):  # статичен метод
               return a + b
       ```
+      
+6. Наследяване
+    - Механизъм, при който един клас (дъщерен) наследява атрибути и методи от друг клас (родител).
+    - Позволява повторна употреба на код.
+      ```py
+      class Animal:  # родителски клас
+          def speak(self):
+              return "Some sound"
+
+
+      class Dog(Animal):  # дъщерен клас
+          def speak(self):  # override на метода
+              return "Woof!"
+
+      ```
+    - `super()` - важно, когато добавяш нови атрибути в дъщерния клас.
+        ```py
+        class Device:
+            def __init__(self, name, power):
+                self.name = name
+                self.power = power
+
+
+        class Light(Device):
+            def __init__(self, name, power, brightness=100):
+                super().__init__(name, power)  # извиква __init__ от Device
+                self.brightness = brightness
+        ```
 
 ---
 <!---
