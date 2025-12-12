@@ -1,0 +1,81 @@
+class Person:
+    people = 0
+
+    def __init__(self, name, age, egn):
+        self.name = name
+        self.age = age  # минава през setter (валидация)
+        self.__egn = egn  # "private" (name mangling)
+
+        Person.people += 1  # Person.people = Person.people + 1
+
+    @property
+    def age(self):
+        return self._age
+
+    @age.setter
+    def age(self, value):
+        if value >= 0:
+            self._age = value
+        else:
+            print("TVOYATA VUZRAST E NEVALIDNA!")
+
+    @property
+    def egn(self):
+        return self.__egn
+
+    # instance methods
+    def hello(self):
+        return f"Hello, {self.name}"
+
+    def birthday(self):
+        self.age += 1
+
+    @classmethod
+    def increase_people_number(cls):
+        cls.people += 1
+
+    @staticmethod
+    def sum_numbers(a, b):
+        return a + b
+
+
+p1 = Person("Ivan", 33, "05586768919")
+
+print(p1.age)
+p1.age = -8  # "TVOYATA VUZRAST E NEVALIDNA!"
+
+p1.age = 60
+print(p1.age)
+
+# TODO
+
+
+class Animal:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def sound(self):
+        return "UNKNOWN SOUND!"
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}(name={self.name}, age={self.age})"
+
+
+class Dog(Animal):
+    def __init__(self, name, age, color):
+        super().__init__(name, age)
+        self.color = color
+
+    def sound(self):
+        return "LAFLAFLAF"
+
+
+a = Animal("Unknown", 0)
+sharo = Dog("Sharo", 12, "brown")
+
+print(a.sound())
+print(sharo.sound())
+
+print(sharo)
+print(a)
