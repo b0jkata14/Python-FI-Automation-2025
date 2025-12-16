@@ -49,7 +49,10 @@ def parse_operation(line):
     return op, a, b
 
 
-def execute_operation(op: str, a: float, b: float) -> float:
+def execute_operation(op: str, a: float, b: float) -> float: 
+    # : str и : float са type hints (подсказки за типа)
+    # те НЕ влияят на изпълнението на програмата
+    # използват се само за по-лесно четене и разбиране на кода
     if op == "ADD":
         return a + b
     if op == "SUB":
@@ -89,4 +92,5 @@ for line in lines:
         print(f"[ERROR] {e}")
         print(f"   Root cause: {type(cause).__name__}: {cause}")
     else:
+
         print(f"[OK] {line} = {result:.1f}")
