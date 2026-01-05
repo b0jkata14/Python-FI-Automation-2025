@@ -9,8 +9,8 @@
 - [Object-Oriented Programming (OOP)](https://docs.google.com/forms/d/e/1FAIpQLSec-IleEHAoL73XVvfioZjwQbLsida70a2SwWBQD5F4rQZ5Fg/viewform?usp=dialog)
 - [Exceptions Handling](https://docs.google.com/forms/d/e/1FAIpQLSch16Rfzuy7_0Ew6xYn5QT-xpFHzChBCeI5ti_KQWe51DFMPQ/viewform?usp=dialog)
 - [WEB Basics — Interacting with REST APIs (1)](https://docs.google.com/forms/d/e/1FAIpQLSfmScyxjbLGD6bj7TGQQu2ir2mx9n5OC2zSJKLjbxKFiGAnhw/viewform?usp=dialog)
-<!---- [WEB Basics — Interacting with REST APIs (2)](https://docs.google.com/forms/d/e/1FAIpQLSfZnC3nR0EIeUgWzxt5RM3CKMgmUg9lPrMgRnuSGubvUSPaBA/viewform?usp=dialog)
-- [Testing](https://docs.google.com/forms/d/e/1FAIpQLSfa-ysg8Wcb1wbU2hDxcZAPTPPG_-AU-rO8eW7-yCX-Eouivg/viewform?usp=publish-editor)
+- [WEB Basics — Interacting with REST APIs (2)](https://docs.google.com/forms/d/e/1FAIpQLSfZnC3nR0EIeUgWzxt5RM3CKMgmUg9lPrMgRnuSGubvUSPaBA/viewform?usp=dialog)
+<!---- [Testing](https://docs.google.com/forms/d/e/1FAIpQLSfa-ysg8Wcb1wbU2hDxcZAPTPPG_-AU-rO8eW7-yCX-Eouivg/viewform?usp=publish-editor)
   -->
 ---
 
@@ -390,7 +390,7 @@
     - `raise_for_status()` — за автоматично откриване на 4xx/5xx грешки.
 
 ---
-<!---
+
 ### 11. WEB Basics — Interacting with REST APIs (2)
 1. POST – създаване на ресурс
     - Използва се за добавяне на нов обект.
@@ -465,7 +465,7 @@
         ```  
 
 ---
-
+<!---
 ### 12. Testing (Тестване)
 1. Автоматизирани тестове
     - Програми, които автоматично проверяват дали друг код работи правилно.
